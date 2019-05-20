@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="root61">
+    <head>
+        <meta charset="utf-8">
+         <title>个人注册</title>
+        <link rel="stylesheet" type="text/css" href="../css/base.css" />
+        <link rel="stylesheet" type="text/css" href="../css/reg.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="../css/jigsaw.css" /> -->
+        <style type="text/css">
+            /*.form-item .field {
+            border: 0 none;
+            font-size: 14px;
+            width: 166px;
+            height: 15px;
+            padding-bottom: 11px;
+            padding-left: 20px;
+            padding-top: 25px;
+        }*/
+            
+        </style>
+    </head>
+    <body>
+        <div class="header">
+        <div class="logo-con w clearfix">
+            <a href="#" class="logo ">
+            </a>
+            <div class="logo-title">欢迎注册</div>
+
+            <div class="have-account">已有账号？ <a href="login.html">请登录&gt;</a></div>
+        </div>
+    </div>
+    <!-- widget header end -->
+    <div class="container w">
+    <!-- widget progress-bar begin -->
+    <div class="progress-bar clearfix">
+        <div class="pro-step cur-step ">
+            <span class="step-index" style="background-position: 0 -200px;">1</span>
+            <p class="step-desc">验证手机号</p>
+        </div>
+        <div class="pro-line pro-line1 person-pro-line person-pro-line1 "></div>
+        <div class="pro-step pro-step2 person-pro-step2  ">
+            <span class="step-index">2</span>
+            <p class="step-desc">填写账号信息</p>
+        </div>
+        <div class="pro-line pro-line2 person-pro-line person-pro-line2 "></div>
+        <div class="pro-step pro-step3 person-pro-step3  ">
+            <span class="step-index">3</span>
+            <p class="step-desc">注册成功</p>
+        </div>
+    </div>
+    <!-- widget progress-bar end -->
+    <!-- widget reg-steps begin -->
+    <div class="main">
+        <div class="reg-form">
+            <form action="#" id="register-form" >
+                <div id="step1-wrap">
+                    <div class="item-phone-wrap">
+                        <label class="select-country" style="border-right:none">中国0086</label>
+                        <a href="javascript:void(0) " class="arrow"></a>
+                       <div class="item-input-wrap form-item-error" style="border: 1px solid rgb(221, 221, 221);">
+                              <!--   <txt style="position: absolute; z-index: 2; <a rel="nofollow" target="_blank" href="#"line-height: 46px; margin-left: 20px; margin-top: 1px; font-size: 14px; font-family: Arial; color: rgb(204, 204, 204); display: inline;"></txt> -->
+                                <input type="text" id="form-phone" maxlength="11" name="phone" class="field" placeholder="建议使用常用手机号 " autocomplete="off" default="<i class='i-def'></i>验证完成后，你可以使用该手机登录或找回密码">
+                                <i class="i-status"></i>
+                                <i class="i-cancel"></i>
+                            </div>
+                            <div class="input-tip">
+                            <span id="form-phone-error" class="error">
+                            <i class="i-error">
+                            </i>
+                            请输入手机号
+                            </span>
+                            </div>
+                    </div>
+                     <!-- 图片验证 -->
+                        <input type="text" id="code_input" value="" style="">
+                        <div id="v_container">
+                            <canvas id="verifyCanvas" style="cursor: pointer;"></canvas>
+                        </div>
+                        <span class="ifo"></span>
+                    <!-- 按钮 -->
+                       <!--  <div class="form-item form-item-getcode" style="display:none;">
+                            点击按钮进行验证
+
+                        </div> -->
+                         
+                         <!--    <input type="text"class="form-yz" maxlength="4" id="yz-txt" /> -->
+                            <!-- <input type="button" value="8327" id="code" /> -->
+
+                       <!--  <div id="slideAuthCode" class="JDValidate-wrap"> -->
+                            <input type="text" />
+
+                              <!-- <div class="container" id="con">
+                              <div id="captcha" style="position: relative"></div>
+                              <div id="msg"></div>
+                            </div> -->
+                        </div>
+                        <!-- 短信验证 -->
+                        <div class="item-phonecode-wrap" style="display:block;">
+                        <div class="form-item form-item-phonecode">
+                            <div class="phonecode-left" style="border-color: rgb(221, 221, 221); border-right-width: 1px;">
+                                <label>手机验证码</label>
+                                <input type="text" name="mobileCode" maxlength="6" autocomplete="off" id="phoneCode" class="field phonecode" placeholder="输入验证码">
+                                <i class="i-status"></i>
+                                <i class="i-cancel" style="display: none;"></i>
+                            </div>
+                         
+                            <input type="button"class="btn-phonecode" id="getPhoneCode" value="获取验证码" />
+                            <div class="input-tip"><span></span></div>
+                            <div class="audio-tip" style="display: block;">收不到短信验证码？点击&nbsp;<span class="get-auth-code">获取语音验证码</span></div>
+                        </div>
+                    </div>
+            <!-- 短信验证结束 -->
+                        <div class="input-tip">
+                            <span></span>
+                        </div>
+                        <div id="step1-next" class="btn-register">下一步</div>
+                   <!--  <div class="reg-other clearfix">
+                        
+                    </div> -->
+                </div>
+                <!-- 步骤2 -->
+                 <div id="step2-wrap">
+                    <div class="form-item form-item-account" id="form-item-account">
+                        <label>用　户　名</label>
+                        <input type="text" id="form-account" name="regName" class="field" autocomplete="off" maxlength="20" placeholder="您的账户名和登录名" default="<i class='i-def'></i>支持中文、英文、数字、“-”、“_”的组合，4-20个字符">
+                        <i class="i-status1"></i>
+                        <i class="i-cancel"></i>
+                    </div>
+
+                    <div class="input-tip input-tip1">
+                        <span class="tip1"></span>
+                    </div>
+                    <div class="form-item">
+                        <label>设 置 密 码</label>
+                        <input autocomplete="off" type="password" name="pwd" id="form-pwd" class="field" maxlength="20" placeholder="建议使用两种或两种以上字符组合" default="<i class='i-def'></i>建议使用字母、数字和符号两种及以上的组合，6-20个字符" style="width:215px;">
+                        <i class="i-status" style="display:none"></i>
+                        <i class="i-cancel"></i>
+                    </div>
+                    <div class="input-tip">
+                        <span class="tip2"></span>
+                    </div>
+                    <div class="form-item">
+                        <label>确 认 密 码</label>
+                        <input type="password" name="pwdRepeat" id="form-equalTopwd" class="field" placeholder="请再次输入密码" default="<i class='i-def'></i>请再次输入密码">
+                        <i class="i-status"></i>
+                        <i class="i-cancel"></i>
+                    </div>
+                    <div class="input-tip">
+                        <span class="tip3"></span>
+                    </div>
+                    <div><input class="btn-register" id="form-register" value="立即注册" /></div>
+                    <div class="input-tip">
+                        <span></span>
+                    </div>
+                    <!--<div class="back-btn" id="back-btn">返回上一步</div>-->
+                </div>
+            </form>
+        </div>
+    </div>
+                    
+    <!-- widget reg-steps end -->
+    <!-- foot -->
+    <div id="form-footer" class="footer w">
+            <div class="links">
+           <a target="_blank" href="#"> 关于我们</a>|
+           <a target="_blank" href="#">联系我们</a>|
+           <a target="_blank" href="#">人才招聘</a>|
+           <a target="_blank" href="#">商家入驻</a>|
+           <a target="_blank" href="#">广告服务</a>|
+           <a target="_blank" href="#">手机京东</a>|
+           <a target="_blank" href="#">友情链接</a>|
+           <a target="_blank" href="#">销售联盟</a>|
+           <a href="#" target="_blank">京东社区</a>|
+           <a href="#" target="_blank">京东公益</a>|
+           <a target="_blank" href="#" clstag="pageclick|keycount|20150112ABD|9">English Site</a>
+        </div>
+        <div class="copyright">
+            Copyright©2004-2019&nbsp;&nbsp;京东JD.com&nbsp;版权所有
+        </div>
+    </div>
+    <!-- widget footer end -->
+    <!-- 侧边 -->
+    <a class="feedback" href="#" style="margin-top: -67.5px; position: fixed; right: 0px; bottom: 50%;"></a>
+
+    </body>
+     <script src="../js/jquery-1.11.0.min.js"></script>
+     <script src="../js/jquery.cookie.js"></script>
+        <script src="../js/reg.js"></script>
+        <!-- <script src="../lib/jigsaw.js"></script> -->
+        <script src="../js/verificationCode.js"></script>
+    <script type="text/javascript">
+ // jigsaw.init(document.getElementById('captcha'), function () {
+ //    document.getElementById('msg').innerHTML = '登录成功！'
+ //    document.getElementById('con').style.display='none';
+  
+ //  })
+    // var document.getElementById('con);
+   var verifyCode = new GVerify("v_container");
+
+    </script>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+     <link rel="stylesheet" type="text/css" href="../css/fdj.css" />
+    <link rel="stylesheet" type="text/css" href="../css/detail.css" />
+    <style type="text/css">
+        .preview-wrap .box {
+            width: 452px;
+            height: 525px;
+        }
+
+        .tb-pic a {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .tb-pic a img {
+            vertical-align: middle;
+        }
+
+        .tb-thumb {
+            margin: 10px 0 0;
+            overflow: hidden;
+        }
+
+        .tb-thumb li {
+            background: none repeat scroll 0 0 transparent;
+            float: left;
+            /*height: 42px;*/
+            margin: 0 6px 0 0;
+            overflow: hidden;
+            padding: 1px;
+        }
+
+        .tb-s310,
+        .tb-s310 a {
+            height: 450px;
+            width: 450px;
+        }
+
+        .tb-s310,
+        .tb-s310 img {
+            max-height: 450px;
+            max-width: 450px;
+        }
+
+        .tb-s310 a {
+            *font-size: 271px;
+        }
+
+        .tb-s40 a {
+            *font-size: 35px;
+        }
+
+        .tb-s40,
+        .tb-s40 a {
+            /*<!-- height: 40px;
+                    -->
+                    <!-- width: 40px;
+                    -->*/
+            height: 75px;
+            width: 75px;
+        }
+
+        .tb-booth {
+            border: 1px solid #CDCDCD;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tb-thumb .tb-selected {
+            /* <!-- background: none repeat scroll 0 0 #C30008;
+                    -->
+                    <!-- height: 40px;
+                    -->*/
+            margin: 0 3px;
+
+            padding: 2px;
+            opacity: 1;
+        }
+
+        .tb-thumb .tb-selected div {
+            background-color: #FFFFFF;
+            border: medium none;
+            opacity: 0.5;
+        }
+
+        .tb-thumb li div {
+            /*<!-- border: 1px solid #CDCDCD;
+                    -->*/
+        }
+
+        /* .tb-pic img{
+                    width: 75px;
+                    height: 75px;
+                }*/
+        div.zoomDiv {
+            z-index: 999;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 540px;
+            height: 540px;
+            background: #ffffff;
+            border: 1px solid #CCCCCC;
+            display: none;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .bigimg {
+            width: 800px;
+        }
+
+        div.zoomMask {
+            position: absolute;
+            width: 303px;
+            height: 303px;
+            cursor: move;
+            z-index: 1;
+            border: 1px solid #aaa;
+            background: 50% top no-repeat #FEDE4F;
+            opacity: .5;
+        }
+
+        .bt-box {
+            position: relative;
+        }
+
+        .choose-btns {
+            margin-bottom: 20px;
+            padding: 40px 10px 0 0;
+        }
+
+        .choose-amount {
+            width: 49px;
+            height: 48px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .choose-btns .choose-amount input {
+            display: block;
+            width: 31px;
+            height: 44px;
+            line-height: 42px;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            border: none;
+            border: 0;
+            text-align: center;
+        }
+
+        .choose-btns .choose-amount a {
+            display: block;
+            width: 17px;
+            text-align: center;
+            height: 24px;
+            line-height: 22px;
+            overflow: hidden;
+            background: #f1f1f1;
+            color: #666;
+            position: absolute;
+            right: -1px;
+            border: 1px solid #ccc;
+        }
+
+        .choose-btns .choose-amount a.btn-reduce {
+            bottom: -1px;
+        }
+
+        .choose-btns .choose-amount a.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .choose-btns .btn-lg,
+        .choose-btns .choose-amount {
+            margin-right: 10px;
+            float: left;
+        }
+
+        .btn-lg {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 50px;
+            font-size: 18px;
+            background-color: #ff3e68;
+            color: #fff;
+        }
+
+        .shopHeaderArea {
+            float: right;
+            font-family: "microsoft yahei";
+            font-size: 12px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .shopInfo {
+            float: left;
+        }
+
+        .shop-name a {
+            color: #333;
+            margin-right: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hk">
+        <div id="header"></div>
+        <div id="logo">
+            <div class="w rlt">
+                <div class="logo-head">
+                    <a href="#" alt="京东海囤全球" class="logo">京东海囤全球</a>
+                </div>
+                <div class="service"></div>
+                <div id="search">
+                    <div class="form">
+                        <input type="text" id="key" class="text" placeholder="sneakerhead海外旗舰店" value=""><button
+                            class="button action-search-worldwide cw-icon">搜索</button>
+                    </div>
+                    <div id="hotwords-2014">
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                    </div>
+                </div>
+                <!-- 购物车 -->
+                <div id="gwc" class="dorpdown">
+                    <a target="_blank" href="cart.html" class="cw-icon">
+                        <i class="ci-left"></i>
+                        <span>我的购物车</span>
+                    </a>
+                </div>
+                <span class="clr"></span>
+            </div>
+        </div>
+        <!--  -->
+        <div id="container-box">
+          <!-- 
+              <div id="nav" class="w">
+                <div class="shopHeaderArea">
+                    <div class="shopInfo">
+                        <div class="shop-name">
+                            <strong>
+                                <a href="#" target="_blank">
+                                    a2海外自营官方旗舰店</a>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+     </div>
+    <div id="xq" class="w">
+                <div class="product-intro clearfix">
+                    <div class="preview-wrap">
+                        <div class="box">
+                            <div class="tb-booth tb-pic tb-s310">
+                                <a href="../img/mid1.jpg">
+                                    <img src="../img/big1.jpg" alt="美女" rel="../img/mid1.jpg" class="jqzoom" />
+                                </a>
+                            </div>
+                            <div class="bt-box">
+                                <a href="###" id="spec-forward" class="arrow-prev disabled">
+                                    <i class="sprite-arrow-prev"></i>
+                                </a>
+                                <a href="###" id="spec-backward" class="arrow-next disabled">
+                                    <i class="sprite-arrow-next"></i>
+                                </a>
+                                <ul class="tb-thumb" id="thumblist">
+                                    <li class="tb-selected">
+                                        <div class="tb-pic tb-s40">
+                                            <a href="javascript:;">
+                                                <img src="../img/small1.jpg" mid="../img/mid1.jpg"
+                                                    big="../img/big1.jpg">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tb-pic tb-s40">
+                                            <a href="javascript:;">
+                                                <img src="../img/small2.jpg" mid="../img/mid2.jpg"
+                                                    big="../img/big2.jpg">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tb-pic tb-s40">
+                                            <a href="javascript:;">
+                                                <img src="../img/small3.jpg" mid="../img/mid3.jpg"
+                                                    big="../img/big3.jpg">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tb-pic tb-s40">
+                                            <a href="javascript:;">
+                                                <img src="../img/small4.jpg" mid="../img/mid4.jpg"
+                                                    big="../img/big4.jpg">
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="info-wrap">
+                                <div class="country-sign">
+                                    <img class="country-map-icon" src="../img/xxl.jpg">
+                                    <span class="country-name">&nbsp;澳大利亚</span>
+                                </div>
+                                <div class="sku-name">
+                                    <span class="worldbuy-icon">海囤全球</span>
+                                    新西兰进口 a2 Platinum 白金版婴幼儿奶粉 3段(1-3岁) 900g/罐
+                                </div>
+                                <div class="news">
+                                    <div class="item" id="p-ad" title="">【5.16爱他美京东超级品牌日】进口母婴奶粉好礼来袭！购物满899元有机会赢取京东E卡<a
+                                            href="###">满699减200神券限量抢！爆款低至7折，点击速抢好礼</a>
+                                    </div>
+                                </div>
+                                <div id="summary-wrap" class="summary">
+                                    <div class="summary-price-wrap">
+                                        <div class="dt">价&nbsp;&nbsp;格</div>
+                                        <div class="dd">
+                                            <span class="p-price"> <span>￥</span> <span
+                                                    class="price J-p-1950749">229.00</span> </span>
+                                        </div>
+                                        <div class="dd J-fans-price hide" style="display: block;">
+                                            <span class="p-price fans-price">
+                                                <span class="price J-p-f-1950749">￥225.00</span>
+                                            </span>
+                                            <img src="../img/fs.png" class="“fans-icon&quot;">
+                                            <span class="fans-text">关注店铺，即享粉丝价</span>
+                                        </div>
+                                        <div class="summary-tallage" id="summaryTallage">
+                                            <div class="dt" id="summaryTallageTitle">进&nbsp;口&nbsp;税</div>
+                                            <div class="dd">
+                                                <span id="tax">预计￥20.84</span>
+                                                <span class="d-tip hover">
+                                                    税费信息
+                                                    <span data-tips="京东全球购的售价由商品价、行邮税、国内费用组成" class="tips">
+                                                        <div class="tips-message">
+                                                            <i class="icon-arrowL"></i>
+                                                            <dl>
+                                                                <dt>
+                                                                    税费详情：
+                                                                </dt>
+                                                                <dd id="summaryTallageDetail">
+                                                                    <a href="#" target="_blank">查看详情&gt;&gt;</a>
+                                                                </dd>
+                                                            </dl>
+                                                        </div>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                    
+                                        <div id="summary-promotion">
+                                            <div class="dt">优惠</div>
+                                            <div class="p-promotions">
+                                                <div class="dd ">
+                                                    <div class="prom-item" data-code="16">
+                                                        <em class="hl_red_bg">满送</em>
+                                                        <em class="hl_red">满199元另加119元即赠热销商品，赠完即止，请在购物车点击领取</em>
+                                                        <a href="#" target="_blank"> &nbsp;&nbsp;详情
+                                                            <s class="s-arrow">&gt;&gt;</s></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="summary p-choose-wrap">
+                                        <div class="summary-stock">
+                                            <div class="dt"> 配 送</div>
+                                            <div class="dd clearfix">
+                                                <div class="stock-from J-stock-from">天津保税仓<span>至</span></div>
+                                                <div class="store clearfix">
+                                                    <div data-drop="head" class="head">
+                                                        <span class="text" data-res="">北京朝阳区三环以内</span>
+                                                        <span class="arrow arr-close"></span>
+                                                        <span>有货</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="d-tip hover J-deliver-date"
+                                                style="display: inline;">05:30前下单，预计<b>明天(05月16日)</b>送达</span>
+                                        </div>
+                                        <div id="yunfei">
+                                            <div class="dt">运 费</div>
+                                            <div class="dd"><a title="所选地址自营订单满99元免基础运费。" target="_blank"
+                                                    href="#">99元免基础运费</a></div>
+                                        </div>
+                                    </div>
+                                    <div id="choose-btns" class="choose-btns clearfix">
+                                        <div class="choose-amount ">
+                                            <div class="wrap-input">
+                                                <input class="text buy-num" onkeyup="setAmount.modify('#buy-num');"
+                                                    id="buy-num" value="1" data-max="20">
+                                                <a class="btn-reduce disabled" onclick="setAmount.reduce('#buy-num')"
+                                                    href="javascript:;" data-disabled="1">-</a>
+                                                <a class="btn-add" onclick="setAmount.add('#buy-num')"
+                                                    href="javascript:;" data-disabled="1">+</a>
+                                            </div>
+                                        </div>
+                                        <a href="#" id="InitCartUrl" class="btn-special1 btn-lg">加入购物车</a>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="track"></div>
+                </div>
+                 </div>
+           -->
+        </div>
+    </div>
+    <div class="w">
+        <img src="../img/gw.png" alt="" />
+    </div>
+    <div id="footer"></div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script src="../js/fdj.js"></script>
+<script src="../js/detail.js"></script>
+<script type="text/javascript">
+
+//     $(function() {
+
+//     $('#header').load('head.html', function() {});
+//     $('#footer').load('bottom.html', function() {});
+    
+//     var data = decodeURI(location.search);
+//     var str = data.slice(1); //id=1
+//     var gid =str.split('=')[1];
+//     $.ajax({
+//         type: 'get',
+//         url: '../api/detail.php',
+//         data:'gid='+gid,
+//         async: true,
+//         success: function(str) {
+//             console.log(str);
+//             create(str);
+//         }
+//     });
+
+//     var gid1 = '';
+//      var smallimg1 = '';
+//      var title1 = '';
+//      var price1 = '';
+//     function create(str) {
+//         var data = JSON.parse(str);
+//          console.log(data);
+//          gid1 = data[0].gid;
+//          console.log(gid1);
+//          smallimg1 = data[0].smallimg;
+//          console.log(smallimg1);
+//          title1 = data[0].title;
+//          console.log(title1);
+//          price1 = data[0].price;
+//          console.log(price1);
+//         var data = JSON.parse(str);
+//         console.log(data);
+//         var arr = data.map(function(item) {
+//             // console.log(item);
+//             return `
+//             <div id="nav" class="w">
+//                 <div class="shopHeaderArea">
+//                     <div class="shopInfo">
+//                         <div class="shop-name">
+//                             <strong>
+//                                 <a href="#" target="_blank">
+//                                    ${item.shopname}</a>
+//                             </strong>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//                 <div id="xq" class="w">
+//             <div class="product-intro clearfix">
+//                 <div class="preview-wrap">
+//                     <div class="box">
+//                         <div class="tb-booth tb-pic tb-s310">
+//                             <a href="../img/mid1.jpg">
+//                                 <img src="../img/big1.jpg" alt="美女" rel="../img/mid1.jpg" class="jqzoom" />
+//                             </a>
+//                         </div>
+//                         <div class="bt-box">
+//                             <ul class="tb-thumb" id="thumblist">
+//                                 <li class="tb-selected">
+//                                     <div class="tb-pic tb-s40">
+//                                         <a href="javascript:;">
+//                                             <img src="../img/small1.jpg" mid="../img/mid1.jpg" big="../img/big1.jpg">
+//                                         </a>
+//                                     </div>
+//                                 </li>
+//                                 <li>
+//                                     <div class="tb-pic tb-s40">
+//                                         <a href="javascript:;">
+//                                             <img src="../img/small2.jpg" mid="../img/mid2.jpg" big="../img/big2.jpg">
+//                                         </a>
+//                                     </div>
+//                                 </li>
+//                                 <li>
+//                                     <div class="tb-pic tb-s40">
+//                                         <a href="javascript:;">
+//                                             <img src="../img/small3.jpg" mid="../img/mid3.jpg" big="../img/big3.jpg">
+//                                         </a>
+//                                     </div>
+//                                 </li>
+//                                 <li>
+//                                     <div class="tb-pic tb-s40">
+//                                         <a href="javascript:;">
+//                                             <img src="../img/small4.jpg" mid="../img/mid4.jpg" big="../img/big4.jpg">
+//                                         </a>
+//                                     </div>
+//                                 </li>
+//                             </ul>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div class="info-wrap">
+//                     <div class="country-sign">
+//                         <img class="country-map-icon" src="../img/xxl.jpg">
+//                         <span class="country-name">&nbsp;澳大利亚</span>
+//                     </div>
+//                     <div class="sku-name">
+//                         <span class="worldbuy-icon">海囤全球</span>
+//                        ${item.title}
+//                     </div>
+//                     <div class="news">
+//                         <div class="item" id="p-ad" title="">【5.16爱他美京东超级品牌日】进口母婴奶粉好礼来袭！购物满899元有机会赢取京东E卡<a href="###">满699减200神券限量抢！爆款低至7折，点击速抢好礼</a>
+//                         </div>
+//                     </div>
+//                     <div id="summary-wrap" class="summary">
+//                         <div class="summary-price-wrap">
+//                             <div class="dt">价&nbsp;&nbsp;格</div>
+//                             <div class="dd">
+//                                 <span class="p-price"> <span>￥</span> <span class="price J-p-1950749">${item.price}</span> </span>
+//                             </div>
+//                             <div class="dd J-fans-price hide" style="display: block;">
+//                                 <span class="p-price fans-price">
+//                                     <span class="price J-p-f-1950749">￥225.00</span>
+//                                 </span>
+//                                 <img src="../img/fs.png" class="“fans-icon&quot;">
+//                                 <span class="fans-text">关注店铺，即享粉丝价</span>
+//                             </div>
+//                             <div class="summary-tallage" id="summaryTallage">
+//                                 <div class="dt" id="summaryTallageTitle">进&nbsp;口&nbsp;税</div>
+//                                 <div class="dd">
+//                                     <span id="tax">预计￥20.84</span>
+//                                     <span class="d-tip hover">
+//                                         税费信息
+//                                         <span data-tips="京东全球购的售价由商品价、行邮税、国内费用组成" class="tips">
+//                                             <div class="tips-message">
+//                                                 <i class="icon-arrowL"></i>
+//                                                 <dl>
+//                                                     <dt>
+//                                                         税费详情：
+//                                                     </dt>
+//                                                     <dd id="summaryTallageDetail">
+//                                                         <a href="#" target="_blank">查看详情&gt;&gt;</a>
+//                                                     </dd>
+//                                                 </dl>
+//                                             </div>
+//                                         </span>
+//                                     </span>
+//                                 </div>
+//                             </div>
+//                             <!-- youhui -->
+//                             <div id="summary-promotion">
+//                                 <div class="dt">优惠</div>
+//                                 <div class="p-promotions">
+//                                     <div class="dd ">
+//                                         <div class="prom-item" data-code="16">
+//                                             <em class="hl_red_bg">满送</em>
+//                                             <em class="hl_red">满199元另加119元即赠热销商品，赠完即止，请在购物车点击领取</em>
+//                                             <a href="#" target="_blank"> &nbsp;&nbsp;详情
+//                                                 <s class="s-arrow">&gt;&gt;</s></a></div>
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                         <div class="summary p-choose-wrap">
+//                             <!-- <img src="../img/jt.gif" alt="" /> -->
+//                             <div class="summary-stock">
+//                                 <div class="dt"> 配 送</div>
+//                                 <div class="dd clearfix">
+//                                     <div class="stock-from J-stock-from">天津保税仓<span>至</span></div>
+//                                     <div class="store clearfix">
+//                                         <div data-drop="head" class="head">
+//                                             <span class="text" data-res="">北京朝阳区三环以内</span>
+//                                             <span class="arrow arr-close"></span>
+//                                             <span>有货</span>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <span class="d-tip hover J-deliver-date" style="display: inline;">05:30前下单，预计<b>明天(05月16日)</b>送达</span>
+//                             </div>
+//                             <div id="yunfei">
+//                                 <div class="dt">运 费</div>
+//                                 <div class="dd"><a title="所选地址自营订单满99元免基础运费。" target="_blank" href="#">99元免基础运费</a></div>
+//                             </div>
+//                         </div>
+//                         <div id="choose-btns" class="choose-btns clearfix">
+                           
+//                             <a href="#" id="InitCartUrl" class="btn-special1 btn-lg">加入购物车</a>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div id="track"></div>
+//             </div>
+//             </div>
+//             `;
+//         }).join("");
+//         $('#container-box').html(arr);
+//         $(".jqzoom").imagezoom();
+//     $("#thumblist li a").click(function() {
+//         $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+//         $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+//         $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+//     });
+//     }
+
+//       //点击按钮加入购物车
+//      $('#container-box').on('click', '#InitCartUrl', function () {
+//          console.log('123');
+//          $.ajax({
+//              type: 'post',
+//              url: '../api/cart_addData.php',
+//              async: true,
+//              data: {
+//                  gid: gid1,
+//                  smallimg: smallimg1,
+//                  title: title1,
+//                  price: price1,
+//              },
+//              success: function (str) {
+//                  alert('加入成功~');
+//                  console.log(str);
+//                  return;
+//              }
+//          });
+
+//      });
+// });
+</script>
+
+</html>

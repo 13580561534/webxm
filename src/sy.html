@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="lib/swiper/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index1.css" />
+    <style type="text/css">
+    ul {
+        list-style: none;
+    }
+
+    #banner {
+        width: 100%;
+        height: 525px;
+        position: relative;
+    }
+
+    #slider {
+        position: absolute;
+        width: 100%;
+        height: 525px;
+        left: 0px;
+        /*top:-528px;*/
+        overflow: hidden;
+    }
+
+    #slider .img {
+        display: block;
+        width: 726px;
+        height: 369px;
+        position: absolute;
+        top: 0;
+        left:350px;
+    }
+
+    #slider .item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    #slider .item:first-of-type {
+        opacity: 1;
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        font-size: 36px;
+        text-decoration: none;
+        color: white;
+        display: block;
+        width: 50px;
+        height: 80px;
+        margin-top: -45px;
+        text-align: center;
+        line-height: 90px;
+        top: 200px;
+        display: none;
+    }
+
+    .prev {
+        background: url(img/slideV2.png) 0 -144px no-repeat;
+        height: 80px;
+        left: 349px;
+        margin-top: -40px;
+        z-index: 99;
+    }
+
+    .next {
+        background: url(img/slideV2.png) -53px -144px no-repeat;
+        left: 1036px;
+        margin-top: -40px;
+    }
+
+    .spns {
+        position: relative;
+        top: 311px;
+        left: 50%;
+        margin-left: -75px;
+        width: 150px;
+        height: 20px;
+        z-index: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .spn {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: url(img/slideV2.png) -20px 0 no-repeat;
+        display: inline-block;
+    }
+
+    .spn span {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .on {
+        background: url(img/slideV2.png) 0 0 no-repeat;
+    }
+
+    .salelist {
+        position: absolute;
+        width: 726px;
+        height: 156px;
+        left:350px;
+        top: 369px;
+        /*background:#ccc;*/
+    }
+
+    .salelist ul li {
+        float: left;
+    }
+
+    #slider .salelist ul li a {
+        display: block;
+        height: 156px;
+        border: 1px solid #ebe2eb;
+    }
+
+    #slider .salelist ul li img {
+        width: 179px;
+        height: 156px;
+    }
+
+    #slider .salelist ul li img:hover {
+        opacity: 0.9;
+    }
+
+    #slider .slideright {
+        position: absolute;
+        width: 242px;
+        height: 525px;
+        top: 0px;
+        right:104px;
+        background: #fff;
+        border-bottom: 1px solid #f7f5f7;
+    }
+
+    /*右边轮播图*/
+    .swiper-container {
+        width: 242px;
+        height: 525px;
+        position: relative;
+    }
+
+    .swiper-slide {
+        text-align: center;
+    }
+
+    .swiper-slide ul li a {
+        display: block;
+        font-size: 18px;
+        color: #312b30;
+        margin: 20px 0 6px;
+    }
+
+    .swiper-slide ul li .tit {
+        display: block;
+        margin: 20px 0 6px;
+        font-size: 18px;
+        color: #312b30;
+    }
+
+    .swiper-slide ul li img {
+        display: block;
+        width: 159px;
+        height: 159px;
+        margin: 52px auto 0;
+    }
+
+    .swiper-slide ul li .fit {
+        display: block;
+        color: #9a949b;
+        font-size: 14px;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        /*width: 70px;*/
+        top: 90px;
+        left: 47%;
+        text-align: center;
+        cursor: default;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        text-align: center;
+        line-height: 20px;
+        color: #fff;
+        background: #666;
+        font-size: 12px;
+    }
+
+    .swiper-pagination-bullet-active {
+        /*焦点高亮*/
+        color: #fff;
+        background: #333;
+    }
+    </style>
+    <!-- <script type="lib/swiper/swiper.min.js"></script> -->
+</head>
+
+<body>
+    <div id="hk">
+        <!-- 头部 -->
+        
+        <div id="header"></div>
+        <div id="logo">
+            <div class="w rlt">
+                <div class="logo-head">
+                    <a href="#" alt="京东海囤全球" class="logo">京东海囤全球</a>
+                </div>
+                <div class="service"></div>
+                <div id="search">
+                    <div class="form">
+                        <input type="text" id="key" class="text" placeholder="sneakerhead海外旗舰店" value=""><button class="button action-search-worldwide cw-icon">搜索</button>
+                    </div>
+                    <div id="hotwords-2014">
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                        <a href="#">面膜</a>
+                    </div>
+                </div>
+                <!-- 购物车 -->
+                <div id="gwc" class="dorpdown">
+                    <a target="_blank" href="html/cart.html" class="cw-icon">
+                        <i class="ci-left"></i>
+                        <span>我的购物车</span>
+                    </a>
+                </div>
+                <span class="clr"></span>
+            </div>
+        </div>
+        <!-- logo部分结束 -->
+        <!-- 导航部分 -->
+        <div id="nav">
+            <div class="w">
+                <div id="categorys" class="dorpdown">
+                    <div class="dt">
+                        <a target="_blank" href="#"><i class="f1 nav2016">
+                            </i>全部商品分类</a>
+                    </div>
+                    <div class="dd" style="display:;">
+                        <div class="dd-inner">
+                            <div class="item ">
+                                <h3> <i class="i1"></i><a href="#" class="link">奶粉辅食</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-11px">
+                                    <div class="sublist">
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="html/goodlist.html">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                        <!--  -->
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <!--  -->
+                                        <div class="split"></div>
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                    </div>
+                                    <div class="sub-right">
+                                        <ul class="sub-brands clearfix">
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9d0dN10662176.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                            <li><a href="#">
+                                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                                </a></li>
+                                        </ul>
+                                        <a href="#">
+                                            <img src="img/cd.png" height="172" width="247" alt="" class="cd" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 二级1结束 -->
+                            <div class="item">
+                                <h3><i class="i2"></i>
+                                    <a href="#">尿裤辅食</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-54px">
+                                    <div class="sublist">
+                                         <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="html/goodlist.html">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                        <!--  -->
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <!--  -->
+                                        <div class="split"></div>
+                                        <dl class="slBlock">
+                                            <dt class="liTitle">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dt>
+                                            <dd><a href="#" class="liItem">1段</a></dd>
+                                            <dd><a href="#" class="liItem">2段</a></dd>
+                                            <dd><a href="#" class="liItem">3段</a></dd>
+                                            <dd><a href="#" class="liItem">4段</a></dd>
+                                            <dd><a href="#" class="liItem">孕妈奶粉</a></dd>
+                                            <dd><a href="#" class="liItem">有机奶粉</a></dd>
+                                            <dd><a href="#" class="liItem lastItem">特殊配方</a></dd>
+                                            <span class="clr"></span>
+                                        </dl>
+                                        <div class="split"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- i3 -->
+                            <div class="item">
+                                <h3><i class="i3" style="background-position:"></i>
+                                    <a href="#">个护美妆</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-97px">
+                                    3
+                                </div>
+                            </div>
+                            <!-- i4 -->
+                            <div class="item">
+                                <h3><i class="i4" style="background-position:"></i>
+                                    <a href="#" class="link">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-140px">
+                                    4
+                                </div>
+                            </div>
+                            <!-- i5 -->
+                            <div class="item">
+                                <h3><i class="i5"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-183px">
+                                    5
+                                </div>
+                            </div>
+                            <!-- i6 -->
+                            <div class="item">
+                                <h3><i class="i6"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-226px">
+                                    6
+                                </div>
+                            </div>
+                            <!-- i7 -->
+                            <div class="item">
+                                <h3><i class="i7"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top:-269px">
+                                    7
+                                </div>
+                            </div>
+                            <!-- i8 -->
+                            <div class="item">
+                                <h3><i class="i8"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top: -312px;">
+                                    8
+                                </div>
+                            </div>
+                            <!-- i9 -->
+                            <div class="item">
+                                <h3><i class="i9"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top: -355px;">
+                                    9
+                                </div>
+                            </div>
+                            <!-- i10 -->
+                            <div class="item">
+                                <h3><i class="i10"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top: -398px;">
+                                    10
+                                </div>
+                            </div>
+                            <!-- i11 -->
+                            <div class="item">
+                                <h3><i class="i11"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top: -441px;">
+                                    11
+                                </div>
+                            </div>
+                            <!-- i12 -->
+                            <div class="item">
+                                <h3><i class="i12"></i>
+                                    <a href="#">营养保健</a>
+                                    <b class="arrow-right nav2016"></b>
+                                </h3>
+                                <h4><a href="#">奶粉</a></h4>
+                                <h4><a href="#">辅食</a></h4>
+                                <!-- 二级菜单 -->
+                                <div class="sub-menu" style="top: -484px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav-items">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li>
+                            <a href="#"><img src="img/nav.png" height="26" width="60" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="img/nav.png" height="26" width="60" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="img/nav.png" height="26" width="60" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="img/nav.png" height="26" width="60" alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 导航条结束 -->
+            </div>
+        </div>
+        <div id="banner">
+            <div id="slider">
+                <ul class="list">
+                    <li class="item" style="background-color: #f6e31b;">
+                        <img class="photo_ban img" src="img/lb1.jpg" alt="">
+                    </li>
+                    <li class="item" style="background-color: #f8b551;">
+                        <img class="photo_ban img" src="img/lb2.png" alt="">
+                    </li>
+                    <li class="item" style="background-color: #fde8e5;">
+                        <img class="photo_ban img" src="img/lb3.jpg" alt="">
+                    </li>
+                    <li class="item" style="background-color: #fec4d2;">
+                        <img class="photo_ban img" src="img/lb4.jpg" alt="">
+                    </li>
+                    <li class="item" style="background-color: #f7dc8d;">
+                        <img class="photo_ban img" src="img/lb5.jpg" alt="">
+                    </li>
+                </ul>
+                <a href="###" class="prev">
+                </a>
+                <a href="###" class="next">
+                </a>
+                <ul class="spns">
+                    <li class="spn on">
+                        <span></span>
+                    </li>
+                    <li class="spn">
+                        <span></span>
+                    </li>
+                    <li class="spn">
+                        <span></span>
+                    </li>
+                    <li class="spn">
+                        <span></span>
+                    </li>
+                    <li class="spn">
+                        <span></span>
+                    </li>
+                </ul>
+                <div class="salelist">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/eba9dba32da551dd.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/eba9dba32da551dd.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/eba9dba32da551dd.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/eba9dba32da551dd.jpg" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 右边轮播图 -->
+                <div class="slideright">
+                    <div class="swiper-container" id="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background:#fff;">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tit">35项“安心购”举措</span>
+                                            <span class="fit">全流程质量管控</span>
+                                            <span class="fit">原产地直采 全程防伪追溯</span>
+                                        </a></li>
+                                </ul>
+                                <img src="img/rlb1.png" alt="" />
+                            </div>
+                            <div class="swiper-slide" style="background: #fff;">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tit">特色服务</span>
+                                            <span class="fit">30天/180天免费维修</span>
+                                            <span class="fit">原产地直采 全程防伪追溯</span>
+                                        </a></li>
+                                </ul>
+                                <img src="img/rlb2.png" alt="" />
+                            </div>
+                            <div class="swiper-slide" style="background:#fff;">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tit">售后无忧</span>
+                                            <span class="fit">7天无忧退 30天质保</span>
+                                            <span class="fit">假一赔十</span>
+                                        </a></li>
+                                </ul>
+                                <img src="img/rlb3.png" alt="" />
+                            </div>
+                        </div>
+                        <!--分页-->
+                        <div class="swiper-pagination">
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主体部分 -->
+        <div id="main">
+            <!-- 全球特卖 -->
+            <div class="w temai floor" data-idx="1">
+                <div class="head" style="">
+                    <div class="title" style="">
+                    </div>
+                    <div class="f-tit"></div>
+                </div>
+                <div class="tabs">
+                    <div class="tab">
+                        <ul>
+                            <li>
+                                <span class="tit">限时抢购 每日10点、22点更新，全球多款品质好货</span>
+                                <span class="split"></span>
+                                <span class="timeTag">仅剩</span>
+                                <span secondcount="1107">
+                                    <div class="bg hour">00</div>
+                                    <div class="semicolon">:</div>
+                                    <div class="bg minute">00</div>
+                                    <div class="semicolon">:</div>
+                                    <div class="bg second">9</div>
+                                </span>
+                                <span class="tag">已结束</span>
+                            </li>
+                            <span class="clr"></span>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="tab-cnt">
+                            <ul class="splist clearfix">
+                                <li>
+                                    <a href="#" class="itemImg">
+                                        <img src="img/nf1.jpg!q90" alt="" />
+                                    </a>
+                                    <a href="#" class="name">德国爱他美Aptamil 婴幼儿奶粉1+段（12-24个月）600g 纸盒装</a>
+                                    <span class="saleprice">
+                                        <span class="label">特卖价:</span>
+                                        <span class="price">
+                                            <span><b>¥</b>89</span>
+                                            <del>¥188</del>
+                                        </span>
+                                    </span>
+                                    <span class="process">
+                                        <span class="txt">已售3%</span>
+                                        <span class="pBar">
+                                            <span class="p-top" style="width:3%;">
+                                            </span>
+                                            <span class="p-btm">
+                                            </span></span></span>
+                                </li>
+                              <!--   <li>
+                                    <a href="#" class="itemImg">
+                                        <img src="img/nf1.jpg!q90" alt="" />
+                                    </a>
+                                    <a href="#" class="name">德国爱他美Aptamil 婴幼儿奶粉1+段（12-24个月）600g 纸盒装</a>
+                                    <span class="saleprice">
+                                        <span class="label">特卖价:</span>
+                                        <span class="price">
+                                            <span><b>¥</b>74</span>
+                                            <del>¥188</del>
+                                        </span>
+                                    </span>
+                                    <span class="process">
+                                        <span class="txt">已售3%</span>
+                                        <span class="pBar">
+                                            <span class="p-top" style="width:3%;">
+                                            </span>
+                                            <span class="p-btm">
+                                            </span></span></span>
+                                </li>
+                                <li>
+                                    <a href="#" class="itemImg">
+                                        <img src="img/nf1.jpg!q90" alt="" />
+                                    </a>
+                                    <a href="#" class="name">德国爱他美Aptamil 婴幼儿奶粉1+段（12-24个月）600g 纸盒装</a>
+                                    <span class="saleprice">
+                                        <span class="label">特卖价:</span>
+                                        <span class="price">
+                                            <span><b>¥</b>295</span>
+                                            <del>¥188</del>
+                                        </span>
+                                    </span>
+                                    <span class="process">
+                                        <span class="txt">已售3%</span>
+                                        <span class="pBar">
+                                            <span class="p-top" style="width:3%;">
+                                            </span>
+                                            <span class="p-btm">
+                                            </span></span></span>
+                                </li>
+                                <li>
+                                    <a href="#" class="itemImg">
+                                        <img src="img/nf1.jpg!q90" alt="" />
+                                    </a>
+                                    <a href="#" class="name">德国爱他美Aptamil 婴幼儿奶粉1+段（12-24个月）600g 纸盒装</a>
+                                    <span class="saleprice">
+                                        <span class="label">特卖价:</span>
+                                        <span class="price">
+                                            <span><b>¥</b>255</span>
+                                            <del>¥188</del>
+                                        </span>
+                                    </span>
+                                    <span class="process">
+                                        <span class="txt">已售3%</span>
+                                        <span class="pBar">
+                                            <span class="p-top" style="width:3%;">
+                                            </span>
+                                            <span class="p-btm">
+                                            </span></span></span>
+                                </li>
+                                <li>
+                                    <a href="#" class="itemImg">
+                                        <img src="img/nf1.jpg!q90" alt="" />
+                                    </a>
+                                    <a href="#" class="name">德国爱他美Aptamil 婴幼儿奶粉1+段（12-24个月）600g 纸盒装</a>
+                                    <span class="saleprice">
+                                        <span class="label">特卖价:</span>
+                                        <span class="price">
+                                            <span><b>¥</b>248</span>
+                                            <del>¥188</del>
+                                        </span>
+                                    </span>
+                                    <span class="process">
+                                        <span class="txt">已售3%</span>
+                                        <span class="pBar">
+                                            <span class="p-top" style="width:3%;">
+                                            </span>
+                                            <span class="p-btm">
+                                            </span></span></span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 全球直采 -->
+            <div class="floor w zhicai" data-idx="2">
+                <div class="head">
+                    <div class="title"></div>
+                    <div class="f-service">
+                        <div class="fore fore1">
+                            <i></i>
+                            <span>京东自营</span>
+                        </div>
+                        <div class="fore fore2">
+                            <i></i>
+                            <span>品质保证</span>
+                        </div>
+                        <div class="fore fore3">
+                            <i></i>
+                            <span>京东自营</span>
+                        </div>
+                        <div class="fore fore4">
+                            <i></i>
+                            <span>京东自营</span>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab">
+                            <ul>
+                                <li class="curr">
+                                    <span class="tWrapper">
+                                        <span class="txt">全球购自营</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="tWrapper">
+                                        <span class="txt">自营个护美妆</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="tWrapper">
+                                        <span class="txt">自营个护美妆</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="tWrapper">
+                                        <span class="txt">自营个护美妆</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="tWrapper">
+                                        <span class="txt">自营个护美妆</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                                <li style="border-right:none;">
+                                    <span class="tWrapper">
+                                        <span class="txt">自营个护美妆</span>
+                                        <i></i>
+                                        <span class="arror-up"></span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <div class="topTwo">
+                                <a href="#" class="item hasComment">
+                                    <img src="img/zc1.jpg!q90" alt="" class="itemBg" />
+                                    <span class="details">
+                                        <span class="area">
+                                            <img src="img/xxl.jpg" class="flag" style="opacity: 1;">
+                                            <span class="brandName">a2</span>
+                                            <span class="split"></span>
+                                            <!--  <span class="from">广州保税区发货</span> -->
+                                        </span>
+                                        <span class="itemName">澳洲a2 Platinum 白金版婴幼儿奶粉3段900g（1-3岁）新西兰原装进口</span>
+                                        <span class="comment">
+                                            <span class="commstar">
+                                                <span class="star star1 "></span>
+                                                <span class="star star2 "></span>
+                                                <span class="star star3 "></span>
+                                                <span class="star star4 "></span>
+                                                <span class="star star5 active"></span>
+                                            </span>
+                                            <span class="cNum"></span>
+                                            <span class="cNum"><b class="comment_num">37万+</b> 条评价</span>
+                                        </span>
+                                        <span class="tips">为了获取珍贵的a2蛋白质，每一头奶牛，都刚经过DNA的检测，造就了奶粉中的黄金贵族~</span>
+                                        <span class="price">
+                                            <span><b>¥</b>219</span>
+                                            <del>¥288</del>
+                                        </span>
+                                    </span>
+                                </a>
+                                <a href="#" class="item hasComment">
+                                    <img src="img/zc2.jpg!q90" alt="" class="itemBg" />
+                                    <span class="details">
+                                        <span class="area">
+                                            <img src="img/xxl.jpg" class="flag" style="opacity: 1;">
+                                            <span class="brandName">a2</span>
+                                            <span class="split"></span>
+                                            <!--  <span class="from">广州保税区发货</span> -->
+                                        </span>
+                                        <span class="itemName">澳洲a2 Platinum 白金版婴幼儿奶粉3段900g（1-3岁）新西兰原装进口</span>
+                                        <span class="comment">
+                                            <span class="commstar">
+                                                <span class="star star1 "></span>
+                                                <span class="star star2 "></span>
+                                                <span class="star star3 "></span>
+                                                <span class="star star4 "></span>
+                                                <span class="star star5 active"></span>
+                                            </span>
+                                            <span class="cNum"></span>
+                                            <span class="cNum"><b class="comment_num">37万+</b> 条评价</span>
+                                        </span>
+                                        <span class="tips">为了获取珍贵的a2蛋白质，每一头奶牛，都刚经过DNA的检测，造就了奶粉中的黄金贵族~</span>
+                                        <span class="price">
+                                            <span><b>¥</b>219</span>
+                                            <del>¥288</del>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="otherItem">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum">
+                                                    <b class="comment_num">100+</b> 条评价</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li> <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum"><b class="comment_num">100+</b> 条评价</span></span>
+                                        </a></li>
+                                    <li> <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum"><b class="comment_num">100+</b> 条评价</span></span>
+                                        </a></li>
+                                    <li> <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum"><b class="comment_num">100+</b> 条评价</span></span>
+                                        </a></li>
+                                    <li> <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum"><b class="comment_num">100+</b> 条评价</span></span>
+                                        </a></li>
+                                    <li> <a href="#" class="hasComment">
+                                            <img class="itemImg" src="img/top3.jpg!q90" style="opacity: 1;">
+                                            <span class="topNum">3</span>
+                                            <span class="name">戴森 DYSON V8 Absolute 家用手持无线大功率强力 除螨吸尘器 6吸头</span>
+                                            <span class="price">
+                                                <span><b>¥</b>2599</span>
+                                            </span>
+                                            <span class="comment"><span class="cNum"><b class="comment_num">100+</b> 条评价</span></span>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 名店 -->
+            <div class="floor w mingdian">
+                <div class="head">
+                    <div class="title" style="background-position: 0 -108px;"></div>
+                </div>
+                <div class="content">
+                    <div class="l-cnt">
+                        <div class="saleSwitch">
+                            <div class="sales">
+                                <a href="#">
+                                    <img src="img/md1.jpg!q90" alt="" />
+                                </a>
+                                <a href="#" class="hide">
+                                    <img src="img/md3.jpg!q90" alt="" />
+                                </a>
+                            </div>
+                            <div class="controls">
+                                <div class="ct curr">Walmart<i></i></div>
+                                <div class="ct">Isetan<i></i></div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img src="img/md2.png" alt="" class="l-btm-ad" />
+                        </a>
+                    </div>
+                    <div class="r-cnt">
+                        <ul>
+                            <li>
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="style1">
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="style1">
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="style1">
+                                <a href="#" class="detail">
+                                    <span class="brandLogo">
+                                        <img src="img/mdtg1.jpg">
+                                    </span>
+                                    <span class="txt">泰国7-11合作伙伴</span>
+                                    <span class="tips">品牌官方授权<i></i></span>
+                                </a>
+                                <span class="items">
+                                    <span class="wp">
+                                        <a href="#">
+                                            <img src="img/mdtg2.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>59</span>
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <img src="img/mdtg3.jpg!q90" alt="" class="itemImg" />
+                                            <span class="line"></span>
+                                            <span class="price">
+                                                <span><b>¥</b>49</span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                        <span class="clr"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 家有萌宝 -->
+            <div class="floor w mengbao floor-share1 lazy-fl load-done" data-idx="4">
+                <div class="head">
+                    <div class="title" style=" background-position: 0 -144px;"></div>
+                    <div class="cat">
+                        <ul class="sub-title">
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">奶粉</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">奶粉</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">奶粉</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">奶粉</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">奶粉</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content w">
+                    <div class="top-left short">
+                        <div class="top-act">
+                            <a href="#">
+                                <img src="img/mb1.jpg!q90" alt="" class="smaller" />
+                            </a>
+                            <a href="#" class="big">
+                                <img src="img/mb2.jpg!q90" alt="" />
+                            </a>
+                            <a href="#" class="big">
+                                <img src="img/mb2.jpg!q90" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="top-right short">
+                        <div class="bt">
+                            识货清单
+                        </div>
+                        <div class="tabs">
+                            <img src="img/yazhi.png" height="226" width="203" alt="" />
+                        </div>
+                    </div>
+                    <span class="clr"></span>
+                    <div class="w">
+                        <div class="bottom-left bottom-half">
+                            <div class="mtitle">奶粉尿裤</div>
+                            <div class="brands">
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                            </div>
+                            <ul class="items">
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- middle -->
+                        <div class="bottom-middle bottom-half">
+                            <div class="mtitle">母婴用品</div>
+                            <div class="brands">
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                            </div>
+                            <ul class="items">
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom-right bottom-half">
+                            <div class="mtitle">孕妈用品</div>
+                            <div class="brands">
+                                <a href="#" class="brand">
+                                    <div class="name hide">爱他美</div>
+                                    <img src="img/58fd9cf8Ncb8bd9b5.jpg" alt="" />
+                                </a>
+                            </div>
+                            <ul class="items">
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item shorter">
+                                        <img src="img/mbnf.jpg!q90" alt="" class="itemImg" />
+                                        <span class="name">澳洲爱他美白金版奶粉9 3段</span>
+                                        <span class="price">
+                                            <span><b>¥</b>200</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 家有萌宝 end-->
+             <div class="floor w food floor-share1 lazy-fl load-done">
+                <div class="head">
+                    <div class="title" style=" background-position: 0 -216px;"></div>
+                    <div class="cat">
+                        <ul class="sub-title">
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <!-- 吃遍全球 -->
+            <div class="floor w food floor-share1 lazy-fl load-done">
+                <div class="head">
+                    <div class="title" style=" background-position: 0 -216px;"></div>
+                    <div class="cat">
+                        <ul class="sub-title">
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                            <li class="tag">
+                                <span class="bg lf"></span>
+                                <span class="bg ri"></span>
+                                <a href="#">雀巢</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- tou end -->
+                <div class="content w">
+                    <div class="top-left">
+                        <div class="top-act">
+                            <a href="#">
+                                <img src="img/cbqq1.jpg!q90" alt="" class="smaller" />
+                            </a>
+                            <a href="#" class="big">
+                                <img src="img/cbqq2.jpg!q90" alt="" />
+                            </a>
+                            <a href="#" class="big">
+                                <img src="img/cbqq2.jpg!q90" alt="" />
+                            </a>
+                        </div>
+                        <ul class="bottom-items">
+                            <li class="right-bordered">
+                                <div class="country">
+                                    <div class="inlie-blk">
+                                        <img class="cImg" src="img/qcxx.jpg!q90" style="opacity: 1;">
+                                        <span class="name">雀巢大即溶</span>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="item short" skuid="J_5464293">
+                                    <img class="itemImg" src="img/quechao.jpg!q90" loaded="true" style="opacity: 1;">
+                                    <span class="cornerImg">1</span>
+                                    <span class="name">新西兰 雀巢（Nestle）原装进口成人全脂高钙即溶奶粉 2.2公斤罐装</span>
+                                    <span class="price">
+                                        <span><b>¥</b>219</span>
+                                    </span>
+                                    <span class="tags">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="country">
+                                    <div class="inlie-blk">
+                                        <img class="cImg" src="img/qcxx.jpg!q90" style="opacity: 1;">
+                                        <span class="name">雀巢大即溶</span>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="item short" skuid="J_5464293">
+                                    <img class="itemImg" src="img/quechao.jpg!q90" loaded="true" style="opacity: 1;">
+                                    <span class="cornerImg">1</span>
+                                    <span class="name">新西兰 雀巢（Nestle）原装进口成人全脂高钙即溶奶粉 2.2公斤罐装</span>
+                                    <span class="price">
+                                        <span><b>¥</b>219</span>
+                                    </span>
+                                    <span class="tags">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="country">
+                                    <div class="inlie-blk">
+                                        <img class="cImg" src="img/qcxx.jpg!q90" style="opacity: 1;">
+                                        <span class="name">雀巢大即溶</span>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="item short" skuid="J_5464293">
+                                    <img class="itemImg" src="img/quechao.jpg!q90" loaded="true" style="opacity: 1;">
+                                    <span class="cornerImg">1</span>
+                                    <span class="name">新西兰 雀巢（Nestle）原装进口成人全脂高钙即溶奶粉 2.2公斤罐装</span>
+                                    <span class="price">
+                                        <span><b>¥</b>219</span>
+                                    </span>
+                                    <span class="tags">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="country">
+                                    <div class="inlie-blk">
+                                        <img class="cImg" src="img/qcxx.jpg!q90" style="opacity: 1;">
+                                        <span class="name">雀巢大即溶</span>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="item short" skuid="J_5464293">
+                                    <img class="itemImg" src="img/quechao.jpg!q90" loaded="true" style="opacity: 1;">
+                                    <span class="cornerImg">1</span>
+                                    <span class="name">新西兰 雀巢（Nestle）原装进口成人全脂高钙即溶奶粉 2.2公斤罐装</span>
+                                    <span class="price">
+                                        <span><b>¥</b>219</span>
+                                    </span>
+                                    <span class="tags">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="country">
+                                 <div class="inlie-blk">
+                                        <img class="cImg" src="img/qcxx.jpg!q90" style="opacity: 1;">
+                                        <span class="name">雀巢大即溶</span>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="item short" skuid="J_5464293">
+                                    <img class="itemImg" src="img/quechao.jpg!q90" loaded="true" style="opacity: 1;">
+                                    <span class="cornerImg">1</span>
+                                    <span class="name">新西兰 雀巢（Nestle）原装进口成人全脂高钙即溶奶粉 2.2公斤罐装</span>
+                                    <span class="price">
+                                        <span><b>¥</b>219</span>
+                                    </span>
+                                    <span class="tags">
+                                    </span>
+                                </a>
+                            </li>
+                            <span class="clr"></span>
+                        </ul>
+                    </div>
+                    <div class="top-right">
+                        <div class="bt">
+                            识货清单
+                        </div>
+                        <div class="tabs">
+                            <ul>
+                                <li class="tab curr">
+                                    <span class="txt">甜蜜下午茶</span>
+                                    <i></i>
+                                </li>
+                                <li class="tab">
+                                    <span class="txt">闺蜜减肥</span>
+                                    <i></i>
+                                </li>
+                            </ul>
+                            <div class="tab-contents">
+                                <a href="#" class="item">
+                                    <img src="img/cbqq3.jpg!q90" alt="" />
+                                    <div class="desc">白色恋人，甜蜜美味</div>
+                                </a>
+                                <a href="#" class="item">
+                                    <img src="img/cbqq3.jpg!q90" alt="" />
+                                    <div class="desc">日式茶饮 不一样的下午茶时光</div>
+                                </a>
+                            </div>
+                            <div class="tab-contents hide">
+                                <a href="#" class="item">
+                                    <img src="img/cbqq4.jpg!q90" alt="" />
+                                    <div class="desc">白色恋人，甜蜜美味</div>
+                                </a>
+                                <a href="#" class="item">
+                                    <img src="img/cbqq4.jpg!q90" alt="" />
+                                    <div class="desc">日式茶饮 不一样的下午茶时光</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="clr"></span>
+                    <div class="w brands bottom-bordered2 top-bordered1">
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <a href="#" class="brand">
+                    <div class="name hide">雀巢</div>
+                        <img src="img/cbqqb1.jpg!q90" alt="" />
+                    </a>
+                    <span class="clr"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- chi bian end -->
+        </div>
+
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="lib/swiper/swiper.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.cookie.js"> </script>
+<script src="js/index.js"></script>
+
+<script type="text/javascript">
+ 
+     (function() {
+    var prev_index, next_index, items, timer;
+    init();
+
+    function init() {
+        prev_index = next_index = 0;
+        items = document.querySelectorAll('.list .item').length;
+        // console.log('items:' + items);
+        var slider = document.getElementById('slider');
+        document.querySelector('.prev').onclick = function() {
+            solidePrev();
+            //console.log('上一张')
+        }
+        document.querySelector('.next').onclick = function() {
+            solideNext();
+            //console.log('下一张');
+        }
+        var spn = document.querySelectorAll('.spn');
+        // console.log(spn.length);
+        for (var i = 0; i < spn.length; i++) {
+            spn[i].index = i;
+            spn[i].onmousemove = function() {
+                prev_index = next_index;
+                next_index = this.index;
+                slideTo(prev_index, next_index);
+            }
+        }
+    }
+
+    function solidePrev() {
+
+        prev_index = next_index;
+        //console.log('prev_index:' + next_index)
+        next_index--;
+        next_index = next_index < 0 ? (items - 1) : next_index;
+        slideTo(prev_index, next_index);
+
+    }
+
+    function solideNext() {
+        prev_index = next_index;
+        next_index++;
+        next_index = next_index > (items - 1) ? 0 : next_index;
+        //console.log('prev_index:' + prev_index)
+        //console.log('next_index:' + next_index)
+        slideTo(prev_index, next_index);
+    }
+
+    function slideTo(prev, next) {
+        var lis = document.querySelectorAll('.list .item');
+        var spn = document.querySelectorAll('.spn');
+        //console.log(spn.length);
+        spn[prev].className = 'spn';
+        spn[next].className = 'spn on'
+        animate(lis[prev], {
+            opacity: 0
+        });
+        animate(lis[next], {
+            opacity: 100
+        })
+    }
+
+    function auto() {
+        timer = setInterval(function() {
+            solideNext();
+        }, 2000);
+    }
+    auto();
+    //事件委托，鼠标移入移出，清除定时器
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+
+    slider.onmouseover = function(ev) {
+        if (ev.target.tagName.toLowerCase() == "img" || ev.target.tagName.toLowerCase() == "span") {
+            clearInterval(timer);
+            prev.style.display = 'block';
+            next.style.display = 'block';
+        }
+    }
+
+    slider.onmouseout = function(ev) {
+        if (ev.target.tagName.toLowerCase() == "img" || ev.target.tagName.toLowerCase() == "span") {
+            auto();
+        }
+
+    }
+
+    function getStyle(el, property) {
+        //获取函数正在应用的样式
+        if (getComputedStyle) {
+            return getComputedStyle(el)[property];
+        } else {
+            return el.currentStyle[property];
+        }
+    }
+
+    function animate(el, properties) {
+        // var timerId;
+        clearInterval(el.timerId);
+        el.timerId = setInterval(function() {
+            for (var property in properties) {
+
+                var current;
+                var target = properties[property];
+
+                if (property === 'opacity') {
+                    current = Math.round(parseFloat(getStyle(el, 'opacity')) * 100)
+                } else {
+                    current = parseInt(getStyle(el, property));
+                }
+
+                var speed = (target - current) / 30;
+
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if (property === 'opacity') {
+                    el.style.opacity = (current + speed) / 100;
+                } else {
+                    el.style[property] = current + speed + 'px';
+                }
+            }
+        }, 20)
+    }
+})();
+
+        
+
+</script>
+
+</html>

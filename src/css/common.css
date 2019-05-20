@@ -1,0 +1,37 @@
+#shortcut { width: 100%; height: 30px; line-height: 30px; background: #F1F1F1; z-index: 99; position: relative; font-size: 12px; }
+#shortcut li.spacer { width: 1px; height: 12px; margin-top: 9px; padding: 0; background: #ccc; }
+#shortcut #cj-ttbar .dd, #shortcut #shortcut #ttbar-serv .dd { width: 122px; padding-bottom: 8px; }
+#shortcut #cj-ttbar .dt { width: 120px; padding-left: 25px; }
+#shortcut li.dorpdown .dt { color: #9A949B; }
+#shortcut .dorpdown { position: relative; }
+#shortcut .dorpdown:hover .dorpdown-layer { display: block; }
+#shortcut .dorpdown-layer { top: 30px; background: #fff; border: 1px solid #ddd; display: none; }
+#shortcut .dd { line-height: 24px; }
+#shortcut .dd-spacer { position: absolute; top: -7px; height: 10px; background: #fff; overflow: hidden; }
+#shortcut .qrcode { width: 110px; height: 110px; display: block; margin: 0 auto; background: url(../img/ewm.jpg) no-repeat; margin-top: 25px; }
+#shortcut .dd-inner div { text-align: center; }
+#shortcut #cj-ttbar .dt .watch-left { width: 11px; height: 10px; position: absolute; top: 9px; left: 10px; background: url(../img/index_icon.png) -60px -39px no-repeat; }
+#shortcut .cw-icon:hover .ci-right { background: url(../img/index_icon.png) -83px -83px no-repeat; }
+#shortcut li .ci-right { display: inline-block; top: 12px; right: 8px; width: 10px; height: 7px; overflow: hidden; font: 400 15px/15px consolas; color: #6A6A6A; transition: transform .1s ease-in 0s; background: url(../img/index_icon.png) -60px -64px no-repeat; }
+#shortcut .ci-right s { width: 8px; height: 18px; position: relative; top: 6px; text-decoration: none; }
+#shortcut .dt { float: left; padding: 0 8px; }
+#shortcut li { float: left; height: 30px; padding: 0 2px; }
+#shortcut .header { width: 1210px; height: 30px; margin: 0 auto; }
+#shortcut .header li a { color: #9A949B; }
+#shortcut .cw-icon { position: relative; cursor: default; zoom: 1; }
+
+#foot { min-width: 1210px; margin-top: 60px; }
+#foot .foot-wrap { background: #ff3e68; padding: 41px 0 10px 0; }
+#foot .foot-wrap .w { height: 214px; }
+#foot .foot-wrap .w .logo { float: left; margin-left: 10px; }
+#foot .foot-wrap .w .logo i { background: url(../img/logo1.png) no-repeat; width: 150px; height: 59px; display: block; }
+#foot .foot-wrap .w .col { float: left; margin-left: 43px; padding-top: 6px; }
+#foot .foot-wrap .w .col li { float: left; width: 135px; height: 122px; padding-left: 64px; }
+#foot .foot-wrap .w .col li .title { width: 72px; display: block; margin-bottom: 16px; font-size: 18px; color: #fff; }
+#foot .foot-wrap .w .col li a { display: block; padding-left: 1px; color: #d6d6d6; line-height: 22px; font-size: 12px; text-decoration: none; }
+#foot .foot-wrap .w .col .fore5 { width: 180px; }
+#foot .foot-wrap .w .col .fore5 .cs-online { padding-left: 18px; background: url(../img/bell.png) left center no-repeat; }
+#foot .foot-wrap .w .col .fore5 .jqr { padding-left: 18px; background: url(../img/jqr.png) left center no-repeat; }
+#foot .foot-wrap .foot-bm { height: 40px; line-height: 40px; text-align: center; font-size: 12px; color: #fff; }
+
+/*# sourceMappingURL=common.css.map */

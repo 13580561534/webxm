@@ -1,0 +1,55 @@
+#hk .w { width: 1210px; margin: 0 auto; }
+#hk #logo { width: 100%; height: 100px; }
+#hk .rlt { height: 100px; }
+#hk .rlt .logo-head { float: left; width: 240px; height: 100px; }
+#hk .rlt .logo-head .logo { display: block; width: 100%; height: 100%; background: url(../img/logo.png) no-repeat; text-indent: -999em; margin-top: 25px; }
+#hk .rlt .service { float: left; width: 256px; height: 100px; }
+#hk .rlt #search .form { width: 575px; float: left; height: 33px; margin-top: 25px; }
+#hk .rlt #search .form .text { width: 442px; border: none; line-height: 24px; color: #a9a4a8; padding: 4px; margin-bottom: 4px; border-width: 2px 0 2px 2px; border-color: #ff3e68; border-style: solid; outline: 0; font-size: 14px; }
+#hk .rlt #search .form .button { width: 104px; height: 36px; background: #ff3e68; color: #fff; text-align: center; font-size: 16px; cursor: pointer; border: none; }
+#hk .rlt #hotwords-2014 { float: left; line-height: 20px; width: 470px; height: 20px; margin-top: 10px; overflow: hidden; }
+#hk .rlt #hotwords-2014 a { float: left; white-space: nowrap; margin-right: 10px; color: #a9a4a8; font-family: "microsoft yahei"; }
+#hk .rlt #gwc { float: right; margin-top: -35px; width: 120px; height: 36px; background: #ff3e68; text-align: center; position: relative; }
+#hk .rlt #gwc a { display: block; width: 90px; height: 36px; border: 1px solid #ff3e68; padding: 0 2px 0 26px; background: #ff3e68; text-align: center; line-height: 34px; cursor: pointer; text-decoration: none; }
+#hk .rlt #gwc .ci-left { position: absolute; width: 17px; height: 18px; left: 8px; top: 8px; display: inline-block; background: url(../img/index_icon.png) -60px 0 no-repeat; }
+#hk .rlt #gwc span { color: #fff; font-size: 16px; }
+#hk .rlt .clr { display: block; overflow: hidden; clear: both; height: 0; line-height: 0; font-size: 0; }
+#hk #nav { position: relative; min-width: 1210px; height: 42px; border-bottom: 2px solid #312B30; width: 100%; margin-bottom: 30px; }
+#hk #nav .w { position: relative; z-index: 13; height: 44px; }
+#hk #nav .shopHeaderArea { float: right; font-family: "microsoft yahei"; font-size: 12px; position: relative; z-index: 10; }
+#hk #nav .shopHeaderArea .shop-name a { color: #333; }
+#hk #xq { height: 694px; background: pink; }
+#hk #xq .product-intro { height: 864px; background: #fff; }
+#hk #xq .product-intro .preview-wrap { width: 452px; float: left; height: 565px; background: pink; }
+#hk #xq .product-intro .info-wrap { width: 525px; float: left; margin-left: 20px; height: 827px; padding-top: 30px; }
+#hk #xq .product-intro .info-wrap .country-sign { padding-bottom: 12px; }
+#hk #xq .product-intro .info-wrap .sku-name { font-size: 16px; font-weight: 700; color: #000; line-height: 24px; margin-bottom: 7px; }
+#hk #xq .product-intro .info-wrap .sku-name .worldbuy-icon { background: #ff3e68; color: #fff; padding: 1px 3px; float: left; font-size: 12px; line-height: 16px; border-radius: 2px; font-weight: 100; margin: 3px; }
+#hk #xq .product-intro .info-wrap .news { color: #d91f20; margin-bottom: 19px; }
+#hk #xq .product-intro .info-wrap .news .item { margin-bottom: 5px; overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
+#hk #xq .product-intro .info-wrap .news a { color: #5e69ad; }
+#hk #xq .product-intro .info-wrap .summary { position: relative; padding-bottom: 5px; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap { padding: 20px 20px 8px; margin-bottom: 10px; background: #f8f8f8; color: #000; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap .dd { margin-bottom: 14px; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap .p-price { font-weight: 700; color: #dc1d20; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap .p-price span { font-size: 26px; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap .p-price .price { font-size: 30px; }
+#hk #xq .product-intro .info-wrap .summary .summary-price-wrap .J-fans-price .fans-price .price { font-size: 20px; position: relative; vertical-align: middle; color: #7049ff; }
+#hk #xq .product-intro .info-wrap .dt { float: left; width: 50px; color: #939393; font-size: 12px; }
+#hk #xq .product-intro .info-wrap .dd { margin-left: 52px; color: #000; }
+#hk #xq .product-intro .info-wrap .summary-tallage #tax { font-size: 12px; margin-left: 12px; }
+#hk #xq .product-intro .info-wrap .summary-tallage .d-tip { color: #7049ff; font-size: 12px; }
+#hk #xq .product-intro .info-wrap .summary-tallage .tips-message { display: none; }
+#hk #xq .product-intro .info-wrap #summary-promotion { padding-top: 6px; }
+#hk #xq .product-intro .info-wrap #summary-promotion .p-promotions a { color: #666; }
+#hk #xq .product-intro .info-wrap #summary-promotion .p-promotions .hl_red_bg { color: #fff; background: #d91f20; padding: 2px 3px; margin-right: 10px; display: inline-block; line-height: 15px; }
+#hk #xq .product-intro .info-wrap #summary-promotion .p-promotions .hl_red { color: #000; line-height: 18px; font-size: 12px; }
+#hk #xq .product-intro .info-wrap .summary-stock { padding-bottom: 5px; margin-bottom: 15px; }
+#hk #xq .product-intro .info-wrap .summary-stock .store { float: left; margin: 5px 5px 5px 0; }
+#hk #xq .product-intro .info-wrap .p-choose-wrap { padding-left: 20px; }
+#hk #xq .product-intro .info-wrap .p-choose-wrap .stock-from { float: left; margin: 5px 0; }
+#hk #xq .product-intro .info-wrap .p-choose-wrap .stock-from span { margin: 0 10px; color: #5e6061; }
+#hk #xq .product-intro .info-wrap .p-choose-wrap .d-tip { padding-left: 52px; }
+#hk #xq .product-intro #track { width: 128px; padding: 18px 20px 16px; border: 1px solid #dadada; position: static; float: right; height: 688px; }
+
+/*# sourceMappingURL=detail.css.map */

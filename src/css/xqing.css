@@ -1,0 +1,123 @@
+/* 
+* @Author: Marte
+* @Date:   2019-05-15 09:09:06
+* @Last Modified by:   Marte
+* @Last Modified time: 2019-05-15 09:09:55
+*/
+#hk .w {
+  width: 1210px;
+  margin: 0 auto; }
+#hk #logo {
+  width: 100%;
+  height: 100px; }
+#hk .rlt {
+  height: 100px; }
+  #hk .rlt .logo-head {
+    float: left;
+    width: 240px;
+    height: 100px; }
+    #hk .rlt .logo-head .logo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../img/logo.png) no-repeat;
+      text-indent: -999em;
+      margin-top: 25px; }
+  #hk .rlt .service {
+    float: left;
+    width: 256px;
+    height: 100px; }
+  #hk .rlt #search .form {
+    width: 575px;
+    float: left;
+    height: 33px;
+    margin-top: 25px; }
+    #hk .rlt #search .form .text {
+      width: 442px;
+      border: none;
+      line-height: 24px;
+      color: #a9a4a8;
+      padding: 4px;
+      margin-bottom: 4px;
+      border-width: 2px 0 2px 2px;
+      border-color: #ff3e68;
+      border-style: solid;
+      outline: 0;
+      font-size: 14px; }
+    #hk .rlt #search .form .button {
+      width: 104px;
+      height: 36px;
+      background: #ff3e68;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      border: none; }
+  #hk .rlt #hotwords-2014 {
+    float: left;
+    line-height: 20px;
+    width: 470px;
+    height: 20px;
+    margin-top: 10px;
+    overflow: hidden; }
+    #hk .rlt #hotwords-2014 a {
+      float: left;
+      white-space: nowrap;
+      margin-right: 10px;
+      color: #a9a4a8;
+      font-family: "microsoft yahei"; }
+  #hk .rlt #gwc {
+    float: right;
+    margin-top: -35px;
+    width: 120px;
+    height: 36px;
+    background: #ff3e68;
+    text-align: center;
+    position: relative; }
+    #hk .rlt #gwc a {
+      display: block;
+      width: 90px;
+      height: 36px;
+      border: 1px solid #ff3e68;
+      padding: 0 2px 0 26px;
+      background: #ff3e68;
+      text-align: center;
+      line-height: 34px;
+      cursor: pointer;
+      text-decoration: none; }
+    #hk .rlt #gwc .ci-left {
+      position: absolute;
+      width: 17px;
+      height: 18px;
+      left: 8px;
+      top: 8px;
+      display: inline-block;
+      background: url(../img/index_icon.png) -60px 0 no-repeat; }
+    #hk .rlt #gwc span {
+      color: #fff;
+      font-size: 16px; }
+  #hk .rlt .clr {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0; }
+#hk #nav {
+  position: relative;
+  min-width: 1210px;
+  height: 42px;
+  border-bottom: 2px solid #312B30;
+  width: 100%; }
+  #hk #nav .w {
+    position: relative;
+    z-index: 13;
+    height: 44px; }
+#hk #banner {
+  height: 473px;
+  background: pink; }
+#hk #main {
+  min-height: 1200px;
+  background: #ccc; }
+
+/*# sourceMappingURL=detail.css.map */
