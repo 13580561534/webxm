@@ -33,7 +33,7 @@
         console.log(picItem);//
         var arr = data.map(function(item) {
               var res =picItem.map(function(Pitem){
-                return  `<li class=""><img src="../img/${Pitem}" data-lsrc="../img/big1.jpg" data-maxSrc="../img/${Pitem}"></li>`
+                return  `<li class=""><img src="../img/${Pitem}" data-lsrc="../img/${Pitem}" data-maxSrc="../img/${Pitem}"></li>`
             });
             return `
             <div id="nav" class="w">
@@ -163,8 +163,6 @@
         $('#container-box').html(arr);
         $('.spec-items ul li').eq(0).addClass('on');
         // $(".jqzoom").imagezoom();
-
-      
     // $("#thumblist li a").click(function() {
     //     $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
     //     $(".jqzoom").attr('src', $(this).find("img").attr("mid"));

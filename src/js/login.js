@@ -2,7 +2,7 @@
  * @Author: Marte
  * @Date:   2019-05-18 17:02:59
  * @Last Modified by:   Marte
- * @Last Modified time: 2019-05-20 19:55:58
+ * @Last Modified time: 2019-05-21 08:33:07
  */
 
 $(function() {
@@ -32,9 +32,11 @@ $(function() {
                                     success: function(str) {
                                         console.log(str);
                                         if (str == '1') {
-                                            $.cookie('uname', $('.itxt').val(),7);
+                                            // $.cookie('uname', $('.itxt').val(),7);
+                                            setCookie('username',uname,1);
                                             location.href ='../sy.html?'+uname;
                                             //把这个用户名存到cookie里面
+                                            console.log(uname);
                                              
                                         } else {
                                             alert('登录失败');

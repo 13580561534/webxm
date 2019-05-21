@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2019-05-09 21:02:47
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-05-20 19:57:49
+* @Last Modified time: 2019-05-21 14:07:43
 */
 
 
@@ -19,8 +19,6 @@ $(function(){
           renden();
           function create(str){
             var arr =JSON.parse(str);
-            console.log(arr);
-            console.log(arr.temai);
         var tmres =arr.temai.map(function(item){
             return ` <li data-id="${item.gid}">
                                     <a href="#" class="itemImg">
@@ -68,10 +66,26 @@ $(function(){
        $(this).find('img').show();
     });
      $('#header').load('./html/head.html', function() {
+      var content="";
+       var name=getCookie("username");
+        if(name){
+          $('.dlu').css('display','block');
+          $('.flu').css('display','none');
+          content+=name+'欢迎您';
+          $('.user1').html(content);
+           console.log(name);
+        }else{
+         $('.flu').css('display','block');
+        }
+          $('.out').on('click',function(){
+          removeCookie("username");
+          $('.dlu').css('display','none');
+          location.reload();
+         });
     });
     $('#footer').load('html/bottom.html', function() {
         //脚部
     }); 
-     // var name=getCookie("uname");
-     //    console.log(name);
+
+    
 });
